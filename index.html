@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silicon Hills Lawyer AI Copilot</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b1021;
+      --fg: #f5f7ff;
+      --accent: #5be9b9;
+      --muted: #9aa7c7;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.08);
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 20%, rgba(91, 233, 185, 0.15), transparent 25%),
+                  radial-gradient(circle at 80% 0%, rgba(76, 110, 245, 0.25), transparent 30%),
+                  var(--bg);
+      color: var(--fg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px 72px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .shell { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(16px);
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin: 0 0 12px;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    p.lede {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(91, 233, 185, 0.12);
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(91, 233, 185, 0.35);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: linear-gradient(120deg, rgba(91, 233, 185, 0.9), rgba(76, 110, 245, 0.9));
+      color: #0b1021;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 14px 35px rgba(76, 110, 245, 0.35);
+      transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--fg);
+      box-shadow: none;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.05); }
+
+    .section-title {
+      font-size: 18px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .feature {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+      border-radius: 14px;
+    }
+
+    .feature h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: -0.01em;
+    }
+
+    .feature p { margin: 0; color: var(--muted); line-height: 1.5; }
+
+    .questions {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .question-chip {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 12px 14px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="card">
+      <div class="badge">AI Lawyer for Startup Founders · 24/7</div>
+      <h1>Silicon Hills Lawyer, now as your AI copilot</h1>
+      <p class="lede">
+        Ground your legal decisions in the expertise and playbooks already published on SiliconHillsLawyer.com. Get instant guidance on fundraising, equity, M&A, and every day founder questions—without waiting for billable hours.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="mailto:hello@siliconhillslawyer.com">Get early access</a>
+        <a class="btn secondary" href="https://siliconhillslawyer.com/" target="_blank" rel="noopener">Explore the legal library</a>
+      </div>
+      <div class="note">Answers are grounded in SiliconHillsLawyer.com content and best-practice templates. Complex issues still deserve human counsel—this is your always-on first pass.</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">What can it answer?</div>
+      <div class="questions">
+        <div class="question-chip">“What is EBITDA and why does it matter in diligence?”</div>
+        <div class="question-chip">“How should founders split equity after seed?”</div>
+        <div class="question-chip">“SAFE vs. convertible note—what’s better?”</div>
+        <div class="question-chip">“How do pro rata rights work in a priced round?”</div>
+        <div class="question-chip">“What to include in a data room for a sale?”</div>
+        <div class="question-chip">“Is my advisor agreement market?”</div>
+      </div>
+
+      <div class="section-title" style="margin-top:24px;">Why founders love it</div>
+      <ul class="feature-list">
+        <li class="feature">
+          <h3>Grounded in your content</h3>
+          <p>Scrapes, indexes, and cites the Silicon Hills Lawyer library so every answer stays aligned with the firm’s vetted guidance.</p>
+        </li>
+        <li class="feature">
+          <h3>Built for speed</h3>
+          <p>Ask anything—even the “dumb” questions—and get instant responses without waiting on calendar invites.</p>
+        </li>
+        <li class="feature">
+          <h3>Founder-friendly guardrails</h3>
+          <p>Transparent citations, simplified definitions, and clear next steps help you act confidently while knowing when to loop in counsel.</p>
+        </li>
+        <li class="feature">
+          <h3>Always available</h3>
+          <p>Available 24/7 across web and mobile so legal answers are as close as your keyboard.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
